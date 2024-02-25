@@ -1,0 +1,15 @@
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    title= "Учимся работать с шаблонизатором Pug"
+  body
+    include ./components/header.pug
+
+    //- pre
+    //-   code
+    //-     | #{JSON.stringify(results, null, 2)}
+
+
+    p #{results['login']}
+
+    include ./components/footer.pug

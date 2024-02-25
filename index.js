@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.set('view engine', 'pug');
 
 const session = require('express-session');
 
@@ -21,10 +21,13 @@ app.use(session({
     saveUninitialized: true
 }));
 
-const authRouter = require('./authRouter');
-const mainRouter = require('./mainRouter');
+const authRouter = require('./Routers/authRouter');
+const mainRouter = require('./Routers/mainRouter');
 app.use("/auth", authRouter);
 app.use("/", mainRouter);
+
+
+
 
 
 
